@@ -1,0 +1,83 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(238, 234, 234);
+}
+.container {
+  min-width: 1220px;
+  margin: 0 auto;
+}
+.slider {
+  position: relative;
+  height: 350px;
+  width: 700px;
+  margin: 0 auto;
+  background: darkgreen;
+}
+.slider input {
+  display: none;
+}
+.slider__item-1 {
+  background-image: url(http://habrastorage.org/files/3f2/628/bd5/3f2628bd58c8452db516195cb0c9bfc9.jpg);
+}
+.slider__item-2 {
+  background-image: url(http://habrastorage.org/files/3e1/95d/c7f/3e195dc7f5a64469807f49a14f97ba0e.jpg);
+}
+.slider__item-3 {
+  background-image: url(http://habrastorage.org/files/663/6b1/d4f/6636b1d4f8e643d29eab8c192fc1cea3.jpg);
+}
+.slider__item-4 {
+  background-image: url(http://habrastorage.org/files/e59/424/c04/e59424c046be4dab897d84ab015c87ea.jpg);
+}
+.slider__item-5 {
+  background-image: url(http://habrastorage.org/files/53c/ff6/c1c/53cff6c1caf842368c70b8ef892d8402.jpg);
+}
+.slider__navigation {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: -30px;
+}
+.slider__nav-item {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  border: 2px solid gray;
+  border-radius: 50%;
+}
+.slider__nav-item + .slider__nav-item {
+  margin-left: 20px;
+}
+.slider__nav-item:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: gray;
+}
+.slider__items,
+.slider__slide {
+  height: inherit;
+  width: inherit;
+}
+.slider__slide {
+  position: absolute;
+}
+.slider__nav-item:checked .slider__item-1 {
+  background: gray;
+}
